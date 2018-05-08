@@ -98,15 +98,18 @@ namespace LabPOO
                         continue;
                     }
                     AddToCart(market[answer]);
+                    /*
                     //Hermana revisa carro
 
                     foreach (Product producto in cart)
                     {
                         sis.ChequearCarrito(producto.aa);
                         sis.RetirarProducto(cart, market[answer]);
-                    }
 
+                    }
+                    Console.WriteLine("holi");
                     //reviso ya
+                    */
                     break;
                 }
                 catch

@@ -42,18 +42,18 @@ namespace LabPOO
 
             foreach (Product productt in carrito)
             {
-                bool error = false;
+                bool ohno = false;
                 foreach (String necesario in this.nombres)
                 {
-                    error = false;
+                    ohno = false;
                     if (necesario != productt.GetName())
                     {
-                        error = true;
+                        ohno = true;
                         
                     }
                     
                 }
-                if (error == true)
+                if (ohno == true)
                 {
                     Console.WriteLine("no lo esta, Matias malo :c ");
                     carrito.Remove(productt);
