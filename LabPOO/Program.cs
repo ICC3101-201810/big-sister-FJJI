@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 
 namespace LabPOO
 {
+    [Serializable()]
     class Program
     {
         public static List<Product> cart;
@@ -14,7 +15,8 @@ namespace LabPOO
 
         static void Main(string[] args)
         {
-            cart = new List<Product>();
+            cart = Serializacion.Cargar();
+            
             market = new List<Product>();
             SupplyStore();
             while (true)
@@ -51,6 +53,7 @@ namespace LabPOO
                     }
                     else if (answer == "5")
                     {
+                        Serializacion.Guardar(cart);
                         Environment.Exit(1);
                     }
                 }
