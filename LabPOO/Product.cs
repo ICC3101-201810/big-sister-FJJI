@@ -40,5 +40,17 @@ namespace LabPOO
         public int Stock { get => stock; }
         public int Price { get => price; }
         public string Unit { get => unit; }
+
+        public string GetName()
+        {
+            return this.name;
+        }
+        public void aa(string mensaje)
+        {
+            string nombre = this.GetName();
+            Console.WriteLine("Matias, el producto " +nombre + mensaje);
+
+            
+        }
     }
 }

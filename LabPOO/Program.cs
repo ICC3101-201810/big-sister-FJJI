@@ -16,7 +16,7 @@ namespace LabPOO
         static void Main(string[] args)
         {
             cart = Serializacion.Cargar();
-            
+            BigSis sis = new BigSis();
             market = new List<Product>();
             SupplyStore();
             while (true)
@@ -30,6 +30,7 @@ namespace LabPOO
                 Console.WriteLine("\t5. Salir");
                 while (true)
                 {
+
                     String answer = Console.ReadLine();
                     if (answer == "1")
                     {
@@ -80,6 +81,7 @@ namespace LabPOO
 
         public static void WalkAround()
         {
+            BigSis sis = new BigSis();
             PrintHeader();
             Console.WriteLine("¿Que deseas comprar?\n\n");
             for (int i = 0; i < market.Count(); i++)
@@ -96,6 +98,15 @@ namespace LabPOO
                         continue;
                     }
                     AddToCart(market[answer]);
+                    //Hermana revisa carro
+
+                    foreach (Product producto in cart)
+                    {
+                        sis.ChequearCarrito(producto.aa);
+                        sis.RetirarProducto(cart, market[answer]);
+                    }
+
+                    //reviso ya
                     break;
                 }
                 catch
@@ -194,5 +205,14 @@ namespace LabPOO
                 response = Console.ReadKey(true);
             }
         }
+
+        /*
+        public static void ListaNecesaria()
+        {
+            List<string> lista = new List<string>();
+            lista.Add()
+        }
+        */
+
     }
 }

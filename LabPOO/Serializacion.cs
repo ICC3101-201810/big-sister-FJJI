@@ -11,28 +11,22 @@ namespace LabPOO
         static class Serializacion
         {
             public static List<Product> Cargar()
+            //Si bien, se activa cuando esta vacio, nos entregara el carrito vacio igualmente
             {
             List<Product> carrito = new List<Product>();
             try
                 {
                     using (Stream stream = File.Open("data.bin", FileMode.Open))
                     {
-                        
-
-
                         BinaryFormatter bin = new BinaryFormatter();
 
                         var CompraAnterior = (List<Product>)bin.Deserialize(stream);
-                        foreach (Product salida in CompraAnterior)
-                        {
-                        // desde aca ya tendremos todos los datos de vuelta
-                        // todas las listas ¿reducible?
+
+                    foreach (Product salida in CompraAnterior)
+                    {
                         carrito.Add(salida);
+                    }
 
-                            
-                        }
-
-                    
                     }
                 }
                 catch (Exception e)
